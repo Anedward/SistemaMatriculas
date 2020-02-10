@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">   
+
+<h:head></h:head> 
+<body> 
+
+<ui:composition template="/template.xhtml">
+	<ui:define name="body">
+
+<h:form >
+
+
+
+
+<p:panelGrid columns="1" border="10" style="margin: 0 auto;" cellpadding = "20" cellspacing = "15">
+
+
+		
+<p:outputLabel value="PERIODO" for="pe" />
+						<p:selectOneMenu id="pe"
+							value="#{carreraController.materias}">
+							<f:selectItem itemLabel="SELECCIONE PERIODO" itemValue="" noSelectionOption="true" />
+							<f:selectItems
+								value="#{carreraController.materias}" />
+							<h:message for="pe" showDetail="true" />
+						</p:selectOneMenu>
+						
+						
+						
+
+<h:dataTable var="materia" value="#{carreraController.materias}"
+            rendered="#{not empty carreraController.materias}"
+            styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">MATERIA</f:facet>
+               #{materia.nombre}
+                
+            </h:column>
+            <h:column>
+                <f:facet name="header">PRUEBAS</f:facet>
+                #{materia.nivel}
+            </h:column>
+            
+                <h:column>
+                <f:facet name="header">EXAMEN</f:facet>
+                #{materia.nivel}
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">PROMEDIO</f:facet>
+                #{materia.nivel}
+            </h:column>
+        
+   
+   
+   <h:column>
+			<f:facet name="header">CURSO</f:facet>
+			<h:dataTable var="curso" value="#{materia.curso}">
+			<h:column>
+				#{curso.notaFinal}			
+			</h:column>
+			</h:dataTable>
+		</h:column>
+           
+            
+          
+        </h:dataTable>
+
+ <h:commandButton action="create" value="VOLVER AL MENU"/>
+
+
+
+
+
+</p:panelGrid>
+
+
+
+
+</h:form>
+
+
+
+</ui:define>
+</ui:composition>
+
+
+
+
+
+</body> 
+</html>

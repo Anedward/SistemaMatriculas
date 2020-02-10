@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<body>
+
+
+	<ui:composition template="/template.xhtml">
+		<ui:define name="body">
+
+			<h:form>
+
+
+
+				<p:panelGrid columns="6" border="10" style="margin: 0 auto;"
+					cellpadding="20" cellspacing="15">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<p:selectOneMenu id="ca" value="#{carreraController.materias}">
+						<f:selectItem itemLabel="SELECCIONE CALIFICACION" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{carreraController.materias}" />
+						<h:message for="ca" showDetail="true" />
+					</p:selectOneMenu>
+
+
+
+					<p:outputLabel value="SEDE" for="se" />
+					<p:selectOneMenu id="se" value="#{carreraController.materias}">
+						<f:selectItem itemLabel="SELECCIONE SEDE" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{carreraController.materias}" />
+						<h:message for="se" showDetail="true" />
+					</p:selectOneMenu>
+
+
+					<p:outputLabel value="SEXO" for="sex" />
+					<p:selectOneMenu id="sex" value="#{carreraController.materias}">
+						<f:selectItem itemLabel="SELECCIONE SEXO" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{carreraController.materias}" />
+						<h:message for="sex" showDetail="true" />
+					</p:selectOneMenu>
+
+
+
+
+
+
+
+
+				</p:panelGrid>
+
+
+
+				<style type="text/css">
+.left {
+	text-align: left;
+}
+
+.right div {
+	float: right;
+}
+</style>
+
+				<h:panelGrid columns="2" columnClasses="left,right"
+					style="width:500%">
+					<p:chart type="line" model="#{grafica.animatedModel1}"
+						style="width:900px; height:700px" />
+					
+				</h:panelGrid>
+
+
+
+			</h:form>
+
+
+
+
+
+		</ui:define>
+	</ui:composition>
+
+
+
+</body>
+</html>

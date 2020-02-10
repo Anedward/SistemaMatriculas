@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+
+	<ui:composition template="/template.xhtml">
+	<ui:define name="body">
+		<h:form >
+		<p:panelGrid columns="8" style="margin:0 auto;">
+			
+	
+		<!-- 		<p:commandButton action="/insert-carreras" value="Univerdidad" >
+						<f:attribute name="tipo" value="nuevo" />
+						<f:attribute name="titulo" value="Univerdidad" />
+					</p:commandButton>
+					
+					<p:commandButton action="create-carreras" value=" MATRICULAS">
+						<f:attribute name="tipo" value="top" />
+						<f:attribute name="titulo" value="Carreras" />
+					</p:commandButton>
+					
+					 -->
+					 <p:commandButton action="Matriculas" value=" MATRICULAS">
+						<f:attribute name="tipo" value="top" />
+						<f:attribute name="titulo" value="Matriculas" />
+					</p:commandButton>
+					 
+					 
+					  <p:commandButton action="Estadisticas" value=" ESTADISTICAS">
+						<f:attribute name="es" value="es" />
+						<f:attribute name="es" value="Estadisticas" />
+					</p:commandButton>
+					
+					 <p:commandButton action="Calificaciones" value=" CALIFICACIONES">
+						<f:attribute name="tipo" value="top" />
+						<f:attribute name="ca" value="CALIFICACIONES" />
+					</p:commandButton>
+				
+						
+					
+						
+			</p:panelGrid>
+		</h:form>	
+		</ui:define>
+	</ui:composition>
+</body> 
+</html>

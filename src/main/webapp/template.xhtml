@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+
+	<title>PLANTILLA</title>
+	<h:link href="http://ups.edu.ec" />	
+</h:head> 
+ <body> 
+
+	<div id="contenedor">
+		<div id="cabecera">
+			<ui:insert name="header">
+				<ui:include src="/WEB-INF/comun/cabecera.xhtml" />
+			</ui:insert>
+		</div>
+	
+		
+		<div id="cuerpo">
+			<ui:insert name="body">
+				<ui:include src="/WEB-INF/comun/cuerpo.xhtml" />
+			</ui:insert>
+		</div>
+		<div id="pie">
+			<ui:insert name="footer">
+				<ui:include src="/WEB-INF/comun/pie.xhtml" />
+			</ui:insert>
+		</div>		
+	
+	</div>
+
+ </body> 
+</html>

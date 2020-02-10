@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="/template.xhtml">
+	<ui:define name="body">
+
+<h:form>
+<p:panelGrid columns="2" border="10" 
+	style="margin: 0 auto;" cellpadding = "20" cellspacing = "15">
+
+							
+
+			
+<p:outputLabel value="Carrera" for="carrId" />
+
+
+						<p:selectOneMenu id="carrId"
+							value="#{carreraController.carreras}" >
+							<f:selectItem itemLabel="SELECCIONE CARRERA" itemValue="" noSelectionOption="true" />
+							<f:selectItems
+								value="#{carreraController.carreras}" />
+							<h:message for="carrId" showDetail="true" />
+						</p:selectOneMenu>
+						
+						
+
+	
+	
+			
+<p:outputLabel value="Periodo Academico" for="perId" />
+
+						<p:selectOneMenu id="perId"
+							value="#{eventoBean.newEvento.carrId}">
+							<f:selectItem itemLabel="SELECCIONE PERIODO" itemValue="" noSelectionOption="true" />
+							<f:selectItems
+								value="#{carreraConverter.itemsAvailableSelectOne}" />
+							<h:message for="perId" showDetail="true" />
+						</p:selectOneMenu>
+		
+
+							
+<p:outputLabel value="Modalidad" for="modId" />
+						<p:selectOneMenu id="modId"
+							value="#{eventoBean.newEvento.carrId}">
+							<f:selectItem itemLabel="SELECCIONE MODALIDAD" itemValue="" noSelectionOption="true" />
+							<f:selectItems
+								value="#{carreraConverter.itemsAvailableSelectOne}" />
+							<h:message for="modId" showDetail="true" />
+						</p:selectOneMenu>
+		
+<p:outputLabel value="Grupo" for="grId" />
+						<p:selectOneMenu id="grId"
+							value="#{eventoBean.newEvento.carrId}">
+							<f:selectItem itemLabel="SELECCIONE GRUPO" itemValue="" noSelectionOption="true" />
+							<f:selectItems
+								value="#{carreraConverter.itemsAvailableSelectOne}" />
+							<h:message for="grId" showDetail="true" />
+						</p:selectOneMenu>
+						
+						
+						<h:outputLabel for="menu" value="MATERIAS" />
+        <p:selectCheckboxMenu id="menu" value="#{carreraController.materias}" label="MATERIAS"
+                              filter="true" filterMatchMode="startsWith" panelStyle="width:250px">
+            <f:selectItems value="#{carreraController.materias}" />
+        </p:selectCheckboxMenu>
+
+</p:panelGrid>
+</h:form>
+</ui:define>
+</ui:composition>
+</body> 
+</html>

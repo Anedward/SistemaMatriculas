@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+
+	<h:form>
+		<p:panel id="panel" header="Sistema Estudiantil">
+
+			<p:messages id="msgs" /> 
+
+			<h:panelGrid columns="3" border="10" style="margin:0 auto;"
+				cellpadding="8" cellspacing="3" headerClass="list-header"
+				rowClasses="list-row-even, list-row-odd"
+				styleClass="list-background" title="#{bundle.Checkout}">
+
+				<f:facet name="header">
+					<h:outputText value="LOGIN USUARIO"
+						style="background-color: #FFE4C4" />
+				</f:facet>
+
+				<p:outputLabel for="txtcorreo" value="CORREO: " />
+				<p:inputText id="txtcorreo" required="true"
+					value="#{usuarioBean.usuario.correo}" label="txtcorreo">
+					<f:validateLength minimum="5" />
+				</p:inputText>
+				<p:message for="txtcorreo" display="icon" />
+
+				<p:outputLabel for="txtpassword" value="PASSWORD: " />
+				<p:inputText  id="txtpassword" required="true" type="password"
+					value="#{usuarioBean.usuario.password}" label="txtpassword" >
+					<f:validateLength minimum="5" />
+					</p:inputText>
+					<p:ajax update="msgLastname" event="keyup" />
+				<p:message for="txtpassword" id="msgLastname" display="icon" />
+
+				<f:facet name="footer">
+					<p:commandButton value="Ingresar"
+						update="panel" action="#{usuarioBean.validarUsuario()}" icon="pi pi-check" />
+				</f:facet>
+
+			</h:panelGrid>
+
+		</p:panel>
+
+	</h:form>
+
+</body>
+</html>
