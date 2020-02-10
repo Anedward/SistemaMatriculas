@@ -17,10 +17,6 @@ public class Alumno{
 	private String codigo;
 
 	@Column(name = "alu_genero")
-	private String genero;
-
-	@Column(name = "alu_tipoAlumno")
-	private String tipoAlumno;
 	
 	@OneToMany(mappedBy = "alumno", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Curso> curso;
